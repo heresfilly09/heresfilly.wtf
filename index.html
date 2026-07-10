@@ -1306,6 +1306,16 @@
         $('#sRepos').setAttribute('data-count', '9');
         $('#sStars').setAttribute('data-count', '0');
 
+        fetch('https://api.github.com/users/heresfilly09')
+            .then(res => res.json())
+            .then(data => {
+                if(data.public_repos !== undefined) {
+                    $('#sRepos').setAttribute('data-count', data.public_repos);
+                    const rTotal = document.getElementById('repoTotal');
+                    if(rTotal) rTotal.innerText = data.public_repos;
+                }
+            }).catch(e => console.error(e));
+
         const nav = $('#nav');
         addEventListener('scroll', () => { nav.classList.toggle('scrolled', scrollY > 20); }, { passive: true });
         const tg = $('#navtoggle'),
