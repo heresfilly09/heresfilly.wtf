@@ -1144,6 +1144,132 @@
             75% { transform: translate(-3px, -2px) }
             100% { transform: translate(3px, 2px) }
         }
+
+        /* ---- de-vibecode pass: flat, quiet, technical ---- */
+        :root {
+            --bg: #0f0f11;
+            --text: #e8e6e1;
+            --dim: #9b978f;
+            --mute: #615e58;
+            --accent: #8b6cf0;
+            --accent-hi: #a78bfa;
+            --accent-lo: #5b3fd0;
+            --glow: transparent;
+            --glass: #17171a;
+            --glass-h: #1d1d21;
+            --stroke: #26262a;
+            --stroke-h: #3b3b41;
+            --hi: none;
+            --sh: none;
+            --sh-lg: none;
+        }
+
+        .ambient { background: var(--bg) }
+        .ambient .orb { display: none }
+        .ambient .grid { opacity: .5 }
+
+        .glass {
+            background: var(--glass);
+            -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+            box-shadow: none;
+        }
+        .lift:hover {
+            transform: none;
+            border-color: var(--stroke-h);
+            background: var(--glass-h);
+            box-shadow: none;
+        }
+        .btn:hover { transform: none; box-shadow: none; border-color: var(--stroke-h) }
+        .btn.prim {
+            background: var(--accent);
+            box-shadow: none;
+            color: #0e0e12;
+            border-color: transparent;
+        }
+        .btn.prim:hover { background: var(--accent-hi); box-shadow: none }
+
+        .hero h1 .g {
+            background: none;
+            -webkit-background-clip: border-box;
+            background-clip: border-box;
+            -webkit-text-fill-color: var(--accent);
+        }
+        #contact .g {
+            background: none !important;
+            -webkit-background-clip: border-box !important;
+            background-clip: border-box !important;
+            -webkit-text-fill-color: var(--accent) !important;
+        }
+        .stat .num {
+            background: none;
+            -webkit-background-clip: border-box;
+            background-clip: border-box;
+            -webkit-text-fill-color: var(--text);
+        }
+        .stat .num .pl { -webkit-text-fill-color: var(--accent) }
+
+        .stat {
+            background: none;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 26px 28px;
+        }
+        .stat + .stat { border-left: 1px solid var(--stroke) }
+        .stat .lab { letter-spacing: .12em }
+
+        .fact { background: none; border: none; box-shadow: none; padding: 18px 0 }
+        .fact .ic { background: none; border: none; color: var(--accent) }
+
+        .chip .sq { background: none; border: 1px solid var(--stroke); color: var(--accent) }
+
+        .disc .frame {
+            background: var(--glass);
+            -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+            box-shadow: none;
+        }
+        .disc .frame::before { display: none }
+        .disc .badge {
+            background: var(--glass);
+            -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+            box-shadow: none;
+        }
+
+        .eyebrow { color: var(--accent); gap: 0 }
+        .eyebrow::before { display: none }
+
+        nav.scrolled .navbar {
+            background: #141417;
+            -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+            box-shadow: none;
+        }
+        .navbar { background: none; border: none }
+        .navtoggle {
+            width: auto;
+            height: 42px;
+            padding: 0 16px;
+            font-size: 13px;
+            letter-spacing: .06em;
+        }
+
+        .repo .pill { background: none }
+
+        @media(max-width:600px) {
+            .stat + .stat { border-left: none }
+            .glass,
+            .btn,
+            .disc .frame,
+            .disc .badge,
+            nav.scrolled .navbar,
+            .navlinks {
+                -webkit-backdrop-filter: none !important;
+                backdrop-filter: none !important;
+            }
+        }
     </style>
 </head>
 
@@ -1161,7 +1287,7 @@
                 <a href="#contact">Contact</a>
                 <a class="gh" href="https://github.com/heresfilly09" target="_blank" rel="noopener">GitHub</a>
             </div>
-            <button class="navtoggle" id="navtoggle" aria-label="Toggle menu">☰</button>
+            <button class="navtoggle" id="navtoggle" aria-label="Toggle menu">Menu</button>
         </div>
     </nav>
 
@@ -1174,7 +1300,7 @@
                         width="260" height="260" decoding="async" fetchpriority="high"
                         onerror="this.outerHTML='<div class=ph>F</div>'">
                 </div>
-                <div class="badge"><i>●</i> <span id="followBadge">248 followers</span></div>
+                <div class="badge"><span id="followBadge">248 followers</span></div>
             </div>
             <div>
                 <h1 class="rv">I'm <span class="g">Filly</span>.</h1>
@@ -1191,7 +1317,7 @@
     <section class="stats wrap">
         <div class="stat-row rv">
             <div class="stat glass lift">
-                <div class="num" id="sCommits">—</div>
+                <div class="num" id="sCommits">0</div>
                 <div class="lab">Contributions</div>
             </div>
             <div class="stat glass lift">
