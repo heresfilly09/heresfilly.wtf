@@ -276,6 +276,35 @@
             0% { height: 3px; }
             100% { height: 15px; }
         }
+
+        /* ---- de-vibecode pass: flat, quiet, technical ---- */
+        :root { --accent-glow: transparent }
+
+        body {
+            background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.25) 2px, rgba(0, 0, 0, 0.25) 4px) !important;
+            background-color: #0b0b0c !important;
+        }
+
+        h1 { text-shadow: none }
+        nav a:hover { text-shadow: none }
+
+        .summary-box {
+            box-shadow: none;
+            border-left: 1px solid var(--stroke);
+        }
+
+        .audio-player {
+            box-shadow: none !important;
+            -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+            background: #141416 !important;
+        }
+        .audio-player:hover {
+            box-shadow: none !important;
+            background: #1b1b1e !important;
+        }
+
+        #enterScreen h2 { text-shadow: none !important }
     </style>
 </head>
 <body>
