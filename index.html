@@ -1131,18 +1131,39 @@
             }
         }
 
-        #glitchTrigger { cursor: crosshair; transition: all 0.2s ease; display: inline-block; position: relative; }
+        #glitchTrigger {
+            cursor: crosshair;
+            transition: all 0.2s ease;
+            display: inline-block;
+            position: relative;
+        }
+
         #glitchTrigger.glitching {
             animation: text-glitch 0.1s infinite;
             color: #ff1744;
             text-shadow: -2px 0 blue, 2px 0 red;
         }
+
         @keyframes text-glitch {
-            0% { transform: translate(0) }
-            25% { transform: translate(-3px, 2px) }
-            50% { transform: translate(3px, -2px) }
-            75% { transform: translate(-3px, -2px) }
-            100% { transform: translate(3px, 2px) }
+            0% {
+                transform: translate(0)
+            }
+
+            25% {
+                transform: translate(-3px, 2px)
+            }
+
+            50% {
+                transform: translate(3px, -2px)
+            }
+
+            75% {
+                transform: translate(-3px, -2px)
+            }
+
+            100% {
+                transform: translate(3px, 2px)
+            }
         }
 
         /* ---- de-vibecode pass: flat, quiet, technical ---- */
@@ -1164,9 +1185,17 @@
             --sh-lg: none;
         }
 
-        .ambient { background: var(--bg) }
-        .ambient .orb { display: none }
-        .ambient .grid { opacity: .5 }
+        .ambient {
+            background: var(--bg)
+        }
+
+        .ambient .orb {
+            display: none
+        }
+
+        .ambient .grid {
+            opacity: .5
+        }
 
         .glass {
             background: var(--glass);
@@ -1174,20 +1203,31 @@
             backdrop-filter: none;
             box-shadow: none;
         }
+
         .lift:hover {
             transform: none;
             border-color: var(--stroke-h);
             background: var(--glass-h);
             box-shadow: none;
         }
-        .btn:hover { transform: none; box-shadow: none; border-color: var(--stroke-h) }
+
+        .btn:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: var(--stroke-h)
+        }
+
         .btn.prim {
             background: var(--accent);
             box-shadow: none;
             color: #0e0e12;
             border-color: transparent;
         }
-        .btn.prim:hover { background: var(--accent-hi); box-shadow: none }
+
+        .btn.prim:hover {
+            background: var(--accent-hi);
+            box-shadow: none
+        }
 
         .hero h1 .g {
             background: none;
@@ -1195,19 +1235,24 @@
             background-clip: border-box;
             -webkit-text-fill-color: var(--accent);
         }
+
         #contact .g {
             background: none !important;
             -webkit-background-clip: border-box !important;
             background-clip: border-box !important;
             -webkit-text-fill-color: var(--accent) !important;
         }
+
         .stat .num {
             background: none;
             -webkit-background-clip: border-box;
             background-clip: border-box;
             -webkit-text-fill-color: var(--text);
         }
-        .stat .num .pl { -webkit-text-fill-color: var(--accent) }
+
+        .stat .num .pl {
+            -webkit-text-fill-color: var(--accent)
+        }
 
         .stat {
             background: none;
@@ -1216,13 +1261,33 @@
             box-shadow: none;
             padding: 26px 28px;
         }
-        .stat + .stat { border-left: 1px solid var(--stroke) }
-        .stat .lab { letter-spacing: .12em }
 
-        .fact { background: none; border: none; box-shadow: none; padding: 18px 0 }
-        .fact .ic { background: none; border: none; color: var(--accent) }
+        .stat+.stat {
+            border-left: 1px solid var(--stroke)
+        }
 
-        .chip .sq { background: none; border: 1px solid var(--stroke); color: var(--accent) }
+        .stat .lab {
+            letter-spacing: .12em
+        }
+
+        .fact {
+            background: none;
+            border: none;
+            box-shadow: none;
+            padding: 18px 0
+        }
+
+        .fact .ic {
+            background: none;
+            border: none;
+            color: var(--accent)
+        }
+
+        .chip .sq {
+            background: none;
+            border: 1px solid var(--stroke);
+            color: var(--accent)
+        }
 
         .disc .frame {
             background: var(--glass);
@@ -1230,7 +1295,11 @@
             backdrop-filter: none;
             box-shadow: none;
         }
-        .disc .frame::before { display: none }
+
+        .disc .frame::before {
+            display: none
+        }
+
         .disc .badge {
             background: var(--glass);
             -webkit-backdrop-filter: none;
@@ -1238,8 +1307,14 @@
             box-shadow: none;
         }
 
-        .eyebrow { color: var(--accent); gap: 0 }
-        .eyebrow::before { display: none }
+        .eyebrow {
+            color: var(--accent);
+            gap: 0
+        }
+
+        .eyebrow::before {
+            display: none
+        }
 
         nav.scrolled .navbar {
             background: #141417;
@@ -1247,7 +1322,12 @@
             backdrop-filter: none;
             box-shadow: none;
         }
-        .navbar { background: none; border: none }
+
+        .navbar {
+            background: none;
+            border: none
+        }
+
         .navtoggle {
             width: auto;
             height: 42px;
@@ -1256,10 +1336,15 @@
             letter-spacing: .06em;
         }
 
-        .repo .pill { background: none }
+        .repo .pill {
+            background: none
+        }
 
         @media(max-width:600px) {
-            .stat + .stat { border-left: none }
+            .stat+.stat {
+                border-left: none
+            }
+
             .glass,
             .btn,
             .disc .frame,
@@ -1305,7 +1390,9 @@
             <div>
                 <h1 class="rv">I'm <span class="g">Filly</span>.</h1>
                 <p class="role rv">Systems Developer - Learning &amp; <span id="glitchTrigger">Experimenting</span>.</p>
-                <p class="bio rv" id="bio">I'm a developer who loves diving into how things work behind the scenes. I spend my time exploring low-level programming, developing and experimenting with game cheats, and learning how to build my own tools and servers.</p>
+                <p class="bio rv" id="bio">I'm a developer who loves diving into how things work behind the scenes. I
+                    spend my time exploring low-level programming, developing and experimenting with game cheats, and
+                    learning how to build my own tools and servers.</p>
                 <div class="cta rv">
                     <a class="btn prim" href="#work">Some of my work</a>
                     <a class="btn" href="#contact">Contact Me</a>
@@ -1368,8 +1455,11 @@
             </div>
             <div class="about-copy">
                 <h2 class="title rv">Developer & Enthusiast</h2>
-                <p class="lead rv">I spend most of my time learning how software works on a deeper level. Whether it's playing around with game cheats, trying my hand at reverse engineering, or building small applications, I really enjoy tinkering and figuring out how different systems connect.</p>
-                <blockquote class="quote glass rv">"Intelligence is the ability to avoid doing work, yet getting the work done."<cite>- Linus Torvalds</cite>
+                <p class="lead rv">I spend most of my time learning how software works on a deeper level. Whether it's
+                    playing around with game cheats, trying my hand at reverse engineering, or building small
+                    applications, I really enjoy tinkering and figuring out how different systems connect.</p>
+                <blockquote class="quote glass rv">"Intelligence is the ability to avoid doing work, yet getting the
+                    work done."<cite>- Linus Torvalds</cite>
                 </blockquote>
             </div>
         </div>
@@ -1398,12 +1488,20 @@
 
     <section class="contact wrap" id="contact">
         <span class="eyebrow rv">Contact</span>
-        <h2 class="rv">Let's build something <span class="g" style="background: linear-gradient(120deg, #DDA0DD, #8A2BE2 55%, #9370DB); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">low-level.</span></h2>
+        <h2 class="rv">Let's build something <span class="g"
+                style="background: linear-gradient(120deg, #DDA0DD, #8A2BE2 55%, #9370DB); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">low-level.</span>
+        </h2>
         <div class="links-grid rv">
             <a class="lk glass lift" href="https://github.com/heresfilly09" target="_blank" rel="noopener">
                 <div>
-                    <div class="l">Source</div>
+                    <div class="l">Code</div>
                     <div class="v">GitHub</div>
+                </div><span class="ar">↗</span>
+            </a>
+            <a class="lk glass lift" href="https://profile.hackthebox.com/profile/019ceabb-0497-7392-9099-d4d5ba9354f4" target="_blank" rel="noopener">
+                <div>
+                    <div class="l">Pwn</div>
+                    <div class="v">Hack The Box</div>
                 </div><span class="ar">↗</span>
             </a>
             <a class="lk glass lift" href="https://discord.com/users/1388635367342604468" target="_blank"
@@ -1428,6 +1526,15 @@
         </div>
     </section>
 
+    <section class="wrap" style="padding: 20px 0 40px; display: flex; flex-direction: column; align-items: center;">
+        <span class="eyebrow rv" style="margin-bottom: 18px; font-size: 11px; letter-spacing: 0.18em; color: var(--mute);">Mental Health Resources</span>
+        <div class="rv" style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <a class="glass lift" href="tel:988" style="padding: 11px 22px; border-radius: 14px; font-size: 13.5px; font-weight: 800; color: var(--dim); transition: .25s var(--ease);">988 Lifeline</a>
+            <a class="glass lift" href="sms:741741" style="padding: 11px 22px; border-radius: 14px; font-size: 13.5px; font-weight: 800; color: var(--dim); transition: .25s var(--ease);">Crisis Text Line</a>
+            <a class="glass lift" href="https://findahelpline.com/" target="_blank" rel="noopener" style="padding: 11px 22px; border-radius: 14px; font-size: 13.5px; font-weight: 800; color: var(--dim); transition: .25s var(--ease);">Intl. Help</a>
+        </div>
+    </section>
+
     <footer class="wrap">
         <div class="footwrap">
             <span>© <span id="yr"></span> Filly</span>
@@ -1445,4 +1552,3 @@
 </body>
 
 </html>
-
