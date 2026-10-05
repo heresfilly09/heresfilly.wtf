@@ -18,6 +18,7 @@
     <meta name="twitter:description"
         content="Hi! I am Filly! I am a low level systems developer currently interested in systems development, exploit development, game hacking, and reverse engineering.">
     <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/226134837">
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/226134837">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -318,6 +319,11 @@
             -webkit-text-fill-color: transparent;
             padding-right: 0.1em;
             padding-bottom: 0.1em;
+        }
+
+        @keyframes cursor-blink {
+            0%, 100% { border-color: transparent; }
+            50% { border-color: var(--accent-hi); }
         }
 
         .hero .role {
@@ -1389,7 +1395,30 @@
             </div>
             <div>
                 <h1 class="rv">I'm <span class="g">Filly</span>.</h1>
-                <p class="role rv">Systems Developer - Learning &amp; <span id="glitchTrigger">Experimenting</span>.</p>
+                <p class="role rv" style="display: flex; align-items: center; min-height: 32px; flex-wrap: wrap;">
+                    <span id="typewriter"></span>
+                    <span id="glitchTrigger" style="display: none;">Experimenting</span>
+                    <span id="period" style="display: none;">.</span>
+                    <span id="cursor" style="height: 1.1em; border-right: 3px solid var(--accent-hi); margin-left: 3px; animation: cursor-blink 0.9s step-end infinite;"></span>
+                </p>
+                <script>
+                    const twText = "Systems Developer - Learning & ";
+                    const twEl = document.getElementById('typewriter');
+                    const glEl = document.getElementById('glitchTrigger');
+                    const pdEl = document.getElementById('period');
+                    let twIndex = 0;
+                    function typeWriterEffect() {
+                        if (twIndex < twText.length) {
+                            twEl.textContent += twText.charAt(twIndex);
+                            twIndex++;
+                            setTimeout(typeWriterEffect, 35 + Math.random() * 30);
+                        } else {
+                            glEl.style.display = 'inline-block';
+                            pdEl.style.display = 'inline';
+                        }
+                    }
+                    setTimeout(typeWriterEffect, 700);
+                </script>
                 <p class="bio rv" id="bio">I'm a developer who loves diving into how things work behind the scenes. I
                     spend my time exploring low-level programming, developing and experimenting with game cheats, and
                     learning how to build my own tools and servers.</p>
